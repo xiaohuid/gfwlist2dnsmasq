@@ -2,7 +2,7 @@
 
 # Name:        gfwlist2dnsmasq.sh
 # Desription:  A shell script which convert gfwlist into dnsmasq rules.
-# Version:     0.7.0 (2017.11.23)
+# Version:     0.8.0 (2017.12.25)
 # Author:      Cokebar Chi
 # Website:     https://github.com/cokebar
 
@@ -26,6 +26,12 @@ _yellow() {
 
 usage() {
     cat <<-EOF
+
+Name:        gfwlist2dnsmasq.sh
+Desription:  A shell script which convert gfwlist into dnsmasq rules.
+Version:     0.8.0 (2017.12.25)
+Author:      Cokebar Chi
+Website:     https://github.com/cokebar
 
 Usage: sh gfwlist2dnsmasq.sh [options] -o FILE
 Valid options are:
@@ -68,7 +74,7 @@ clean_and_exit(){
 check_depends(){
     which sed base64 curl >/dev/null
     if [ $? != 0 ]; then
-        _red 'Error: Missing Dependency.\nPlease check whether you have the following binaries on you system:\nsed, base64, curl.\n'
+        _red 'Error: Missing Dependency.\nPlease check whether you have the following binaries on you system:\nwhich, sed, base64, curl.\n'
         exit 3
     fi
 
